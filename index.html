@@ -1,11 +1,14 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="DOGGYMAN - Niigata, Japan">
 <meta property="og:title" content="DOGGYMAN">
 <meta property="og:description" content="DOGGYMAN / Niigata, Japan">
+
 <title>DOGGYMAN | Niigata, Japan</title>
 
 <style>
@@ -18,253 +21,695 @@
   --line:#292929;
   --accent:#fff;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
 body {
   margin:0;
   background:var(--bg);
   color:var(--fg);
   font-family:'Noto Sans JP',sans-serif;
 }
-a { color:inherit; text-decoration:none; }
-img { max-width:100%; display:block; }
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+img {
+  max-width:100%;
+  display:block;
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header {
   position:fixed;
-  top:0; left:0; right:0;
+  top:0;
+  left:0;
+  right:0;
   z-index:10;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   padding:20px 5vw;
+
   background:linear-gradient(#0b0b0b,transparent);
 }
+
 .site-name {
   font-family:'Archivo Black',sans-serif;
   font-size:24px;
   letter-spacing:-1px;
 }
-nav { display:flex; gap:25px; font-size:12px; font-weight:900; letter-spacing:1px; }
-nav a:hover { opacity:.55; }
+
+nav {
+  display:flex;
+  gap:25px;
+
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+nav a:hover {
+  opacity:.55;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   min-height:100vh;
+
   display:grid;
   place-items:center;
+
   text-align:center;
+
   padding:100px 5vw 70px;
+
   border-bottom:1px solid var(--line);
 }
-.hero-inner { width:min(1100px,100%); }
+
+.hero-inner {
+  width:min(1100px,100%);
+}
+
 .logo {
   width:min(520px,80vw);
   margin:0 auto 30px;
   object-fit:contain;
 }
-/* ロゴ画像を入れる場合:
-   <img class="logo" src="photo/logo.png" alt="DOGGYMAN">
-*/
+
+
+/* ロゴ画像がない場合の文字ロゴ */
+
 .logo-placeholder {
   font-family:'Archivo Black',sans-serif;
   font-size:clamp(70px,14vw,180px);
   line-height:.8;
   letter-spacing:-8px;
 }
+
 .tagline {
   margin-top:35px;
+
   color:var(--muted);
+
   font-size:12px;
   letter-spacing:3px;
 }
 
+
+/* =========================
+   SECTION
+========================= */
+
 section {
   width:min(1100px,90vw);
   margin:auto;
+
   padding:100px 0;
+
   border-bottom:1px solid var(--line);
 }
+
 .section-title {
   font-family:'Archivo Black',sans-serif;
+
   font-size:clamp(36px,6vw,70px);
+
   line-height:1;
+
   margin:0 0 50px;
+
   letter-spacing:-2px;
 }
 
+
+/* =========================
+   MUSIC
+========================= */
+
 .youtube-grid {
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:20px;
 }
+
 .video {
   aspect-ratio:16/9;
+
   width:100%;
+
   border:0;
+
   background:#151515;
 }
 
-.schedule { width:100%; border-collapse:collapse; }
-.schedule tr { border-top:1px solid var(--line); }
-.schedule tr:last-child { border-bottom:1px solid var(--line); }
-.schedule td { padding:22px 10px; vertical-align:top; }
-.date { width:150px; font-weight:900; font-size:18px; }
-.place { font-weight:700; }
-.detail { color:var(--muted); font-size:13px; }
+
+/* =========================
+   SCHEDULE
+========================= */
+
+.schedule {
+  width:100%;
+
+  border-collapse:collapse;
+}
+
+.schedule tr {
+  border-top:1px solid var(--line);
+}
+
+.schedule tr:last-child {
+  border-bottom:1px solid var(--line);
+}
+
+.schedule td {
+  padding:22px 10px;
+
+  vertical-align:top;
+}
+
+.date {
+  width:150px;
+
+  font-weight:900;
+
+  font-size:18px;
+}
+
+.place {
+  font-weight:700;
+}
+
+.detail {
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
 
 .photos {
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:12px;
 }
+
 .photos img {
   width:100%;
+
   aspect-ratio:1/1;
+
   object-fit:cover;
+
   background:#151515;
 }
+
 .photo-placeholder {
   aspect-ratio:1/1;
+
   display:grid;
   place-items:center;
+
   background:#151515;
+
   color:#555;
+
   font-size:11px;
 }
+
+
+/* =========================
+   LINKS
+========================= */
 
 .links {
   display:flex;
+
   flex-wrap:wrap;
+
   gap:12px;
 }
+
 .link {
   border:1px solid #444;
+
   padding:15px 24px;
+
   font-size:12px;
+
   font-weight:900;
+
   letter-spacing:1px;
+
   transition:.2s;
 }
-.link:hover { background:#fff; color:#000; }
+
+.link:hover {
+  background:#fff;
+
+  color:#000;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   padding:50px 5vw;
+
   display:flex;
+
   justify-content:space-between;
+
   color:#666;
+
   font-size:11px;
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:700px) {
-  header { padding:16px 5vw; }
-  nav { gap:12px; }
-  nav a:nth-child(1) { display:none; }
-  section { padding:70px 0; }
-  .youtube-grid, .photos { grid-template-columns:1fr; }
-  .schedule td { padding:17px 5px; }
-  .date { width:105px; font-size:15px; }
-  footer { display:block; line-height:2; }
+
+  header {
+    padding:16px 5vw;
+  }
+
+  nav {
+    gap:12px;
+  }
+
+  nav a:nth-child(1) {
+    display:none;
+  }
+
+  section {
+    padding:70px 0;
+  }
+
+  .youtube-grid,
+  .photos {
+    grid-template-columns:1fr;
+  }
+
+  .schedule td {
+    padding:17px 5px;
+  }
+
+  .date {
+    width:105px;
+
+    font-size:15px;
+  }
+
+  footer {
+    display:block;
+
+    line-height:2;
+  }
+
 }
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-  <a class="site-name" href="#">DOGGYMAN</a>
+
+  <a class="site-name" href="#">
+    DOGGYMAN
+  </a>
+
   <nav>
     <a href="#music">MUSIC</a>
     <a href="#schedule">SCHEDULE</a>
     <a href="#photos">PHOTOS</a>
     <a href="#links">LINKS</a>
   </nav>
+
 </header>
+
 
 <main>
 
-  <section class="hero">
-    <div class="hero-inner">
 
-      <!-- ▼ ロゴを入れる場所 ▼
-           photo/logo.png にロゴを置いたら、下のコメントを外してください。
-           <img class="logo" src="photo/logo.png" alt="DOGGYMAN">
-      -->
+<!-- =========================
+     HERO
+========================= -->
 
-      <div class="logo-placeholder">DOGGY<br>MAN</div>
+<section class="hero">
 
-      <div class="tagline">NIIGATA, JAPAN</div>
-    </div>
-  </section>
+  <div class="hero-inner">
 
-  <section id="music">
-    <h2 class="section-title">MUSIC</h2>
-
-    <div class="youtube-grid">
-      <iframe class="video" src="https://www.youtube.com/embed/tKLcg2nkenU" title="DOGGYMAN" allowfullscreen></iframe>
-      <iframe class="video" src="https://www.youtube.com/embed/LhAorE2pFk4" title="DOGGYMAN" allowfullscreen></iframe>
-      <iframe class="video" src="https://www.youtube.com/embed/s3MFZqEsXSg" title="DOGGYMAN" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <section id="schedule">
-    <h2 class="section-title">SCHEDULE</h2>
-
-    <!-- ▼ ライブ予定をここに追加 ▼ -->
-    <table class="schedule">
-      <tr>
-        <td class="date">2026.00.00</td>
-        <td>
-          <div class="place">LIVE TITLE</div>
-          <div class="detail">VENUE / Niigata</div>
-          <div class="detail">OPEN 00:00 / START 00:00</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="date">2026.00.00</td>
-        <td>
-          <div class="place">LIVE TITLE</div>
-          <div class="detail">VENUE / Tokyo</div>
-          <div class="detail">OPEN 00:00 / START 00:00</div>
-        </td>
-      </tr>
-    </table>
-  </section>
-
-  <section id="photos">
-    <h2 class="section-title">PHOTOS</h2>
 
     <!--
-      写真はこのサイトの photo フォルダに入れてください。
+    ========================================
+    ロゴを入れる場合
 
-      例:
-      photo/photo01.jpg
-      photo/photo02.jpg
-      photo/photo03.jpg
+    photoフォルダの中に
 
-      下の photo-placeholder を img に置き換えれば表示できます。
+    logo.png
+
+    を入れてください。
+
+    その場合、下の「文字ロゴ」を削除して
+    このコードを使用してください。
+
+    <img
+      class="logo"
+      src="photo/logo.png"
+      alt="DOGGYMAN"
+    >
+
+    ========================================
     -->
 
-    <div class="photos">
-      <div class="photo1.jpg">PHOTO 01</div>
-      <div class="photo-placeholder">PHOTO 02</div>
-      <div class="photo-placeholder">PHOTO 03</div>
-    </div>
-  </section>
 
-  <section id="links">
-    <h2 class="section-title">LINKS</h2>
+    <!-- 現在は文字ロゴ -->
 
-    <div class="links">
-      <a class="link" href="https://x.com/doggy_niigata" target="_blank" rel="noopener">X / @doggy_niigata</a>
-      <a class="link" href="https://www.instagram.com/doggyman_niigata_jp/?hl=ja" target="_blank" rel="noopener">INSTAGRAM</a>
+    <div class="logo-placeholder">
+      DOGGY<br>
+      MAN
     </div>
-  </section>
+
+
+    <div class="tagline">
+      NIIGATA, JAPAN
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<section id="music">
+
+  <h2 class="section-title">
+    MUSIC
+  </h2>
+
+
+  <div class="youtube-grid">
+
+
+    <iframe
+      class="video"
+      src="https://www.youtube.com/embed/tKLcg2nkenU"
+      title="DOGGYMAN"
+      allowfullscreen>
+    </iframe>
+
+
+    <iframe
+      class="video"
+      src="https://www.youtube.com/embed/LhAorE2pFk4"
+      title="DOGGYMAN"
+      allowfullscreen>
+    </iframe>
+
+
+    <iframe
+      class="video"
+      src="https://www.youtube.com/embed/s3MFZqEsXSg"
+      title="DOGGYMAN"
+      allowfullscreen>
+    </iframe>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SCHEDULE
+========================= -->
+
+<section id="schedule">
+
+  <h2 class="section-title">
+    SCHEDULE
+  </h2>
+
+
+  <!--
+  ========================================
+  ライブ予定をここに追加してください。
+
+  例：
+
+  <tr>
+
+    <td class="date">
+      2026.10.04
+    </td>
+
+    <td>
+
+      <div class="place">
+        LIVE TITLE
+      </div>
+
+      <div class="detail">
+        CLUB RIVERST / Niigata
+      </div>
+
+      <div class="detail">
+        OPEN 17:30 / START 18:00
+      </div>
+
+    </td>
+
+  </tr>
+
+  ========================================
+  -->
+
+
+  <table class="schedule">
+
+
+    <!-- サンプル1 -->
+
+    <tr>
+
+      <td class="date">
+        2026.00.00
+      </td>
+
+      <td>
+
+        <div class="place">
+          LIVE TITLE
+        </div>
+
+        <div class="detail">
+          VENUE / Niigata
+        </div>
+
+        <div class="detail">
+          OPEN 00:00 / START 00:00
+        </div>
+
+      </td>
+
+    </tr>
+
+
+    <!-- サンプル2 -->
+
+    <tr>
+
+      <td class="date">
+        2026.00.00
+      </td>
+
+      <td>
+
+        <div class="place">
+          LIVE TITLE
+        </div>
+
+        <div class="detail">
+          VENUE / Tokyo
+        </div>
+
+        <div class="detail">
+          OPEN 00:00 / START 00:00
+        </div>
+
+      </td>
+
+    </tr>
+
+
+  </table>
+
+</section>
+
+
+
+<!-- =========================
+     PHOTOS
+========================= -->
+
+<section id="photos">
+
+  <h2 class="section-title">
+    PHOTOS
+  </h2>
+
+
+  <!--
+  ========================================
+  写真はphotoフォルダに入れてください。
+
+  フォルダ構成：
+
+  DOGGYMAN/
+  │
+  ├── index.html
+  │
+  └── photo/
+      ├── photo1.jpg
+      ├── photo2.jpg
+      └── photo3.jpg
+
+  ========================================
+  -->
+
+
+  <div class="photos">
+
+
+    <!-- PHOTO 01 -->
+
+    <img
+      src="photo/photo1.jpg"
+      alt="DOGGYMAN photo 1"
+    >
+
+
+    <!-- PHOTO 02 -->
+
+    <img
+      src="photo/photo2.jpg"
+      alt="DOGGYMAN photo 2"
+    >
+
+
+    <!-- PHOTO 03 -->
+
+    <img
+      src="photo/photo3.jpg"
+      alt="DOGGYMAN photo 3"
+    >
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     LINKS
+========================= -->
+
+<section id="links">
+
+  <h2 class="section-title">
+    LINKS
+  </h2>
+
+
+  <div class="links">
+
+
+    <a
+      class="link"
+      href="https://x.com/doggy_niigata"
+      target="_blank"
+      rel="noopener">
+      X / @doggy_niigata
+    </a>
+
+
+    <a
+      class="link"
+      href="https://www.instagram.com/doggyman_niigata_jp/?hl=ja"
+      target="_blank"
+      rel="noopener">
+      INSTAGRAM
+    </a>
+
+
+  </div>
+
+</section>
+
 
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-  <div>© DOGGYMAN</div>
-  <div>NIIGATA, JAPAN</div>
+
+  <div>
+    © DOGGYMAN
+  </div>
+
+  <div>
+    NIIGATA, JAPAN
+  </div>
+
 </footer>
+
 
 </body>
 </html>
+```
