@@ -1,6 +1,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 
 <meta charset="UTF-8">
@@ -28,11 +29,8 @@
 :root {
 
   --bg:#0b0b0b;
-
   --fg:#f2f2f2;
-
   --muted:#999;
-
   --line:#292929;
 
 }
@@ -92,9 +90,7 @@ header {
   position:fixed;
 
   top:0;
-
   left:0;
-
   right:0;
 
   z-index:10;
@@ -174,8 +170,7 @@ nav a:hover {
 
 
 /* ==================================================
-   ★★★ TOP LOGO
-   photo/logo.png を表示するための設定
+   TOP LOGO
 ================================================== */
 
 .logo {
@@ -190,10 +185,6 @@ nav a:hover {
 
 }
 
-
-/*
-   logo.pngが読み込めない場合の予備表示
-*/
 
 .logo-placeholder {
 
@@ -709,14 +700,15 @@ footer {
   <div class="hero-inner">
 
 
-    <!-- ==================================================
-         ★★★ TOP LOGO
+    <!--
+    ==================================================
+    ★★★ TOP LOGO
 
-         photoフォルダ内の logo.png を
-         JavaScriptで自動検出して表示します。
+    photo/logo.png を自動検出して表示します。
 
-         logo.png はPHOTOSには表示されません。
-    ================================================== -->
+    logo.pngはPHOTOSには表示されません。
+    ==================================================
+    -->
 
     <img
       id="bandLogo"
@@ -728,7 +720,7 @@ footer {
 
 
     <!--
-      logo.pngが読み込めなかった場合の予備表示
+    logo.pngが読み込めない場合の予備表示
     -->
 
     <div
@@ -1070,7 +1062,7 @@ footer {
 
 ここだけ自分のGitHub情報に変更してください。
 
-例えば、
+例：
 
 GitHubユーザー名：
 doggyman
@@ -1078,12 +1070,10 @@ doggyman
 リポジトリ名：
 doggyman.github.io
 
-なら、
+↓こうします↓
 
 const githubUser = "doggyman";
 const repository = "doggyman.github.io";
-
-となります。
 
 ★★★ この2つは必ず変更してください ★★★
 
@@ -1091,9 +1081,9 @@ const repository = "doggyman.github.io";
 */
 
 
-const githubUser = "takano129hajime";
+const githubUser = "YOUR_GITHUB_USERNAME";
 
-const repository = "doggyman.github.io";
+const repository = "YOUR_REPOSITORY_NAME";
 
 
 /*
@@ -1103,14 +1093,38 @@ const repository = "doggyman.github.io";
 */
 
 
+
 /*
 ==================================================
-GitHubのphotoフォルダを取得
+★★★ PHOTO FOLDER
+
+今回フォルダ構成を変更したため、
+
+photo/
+    └── photos/
+        ├── 001.jpg
+        ├── 002.jpg
+        └── ...
+
+から画像を取得します。
+
+★★★ フォルダ名を変更した場合はここを変更 ★★★
+
 ==================================================
 */
 
 
-async function getPhotoFolder() {
+const photoFolder = "photo/photos";
+
+
+/*
+==================================================
+GitHub APIからフォルダを取得
+==================================================
+*/
+
+
+async function getGitHubFolder(folderPath) {
 
 
   const apiURL =
@@ -1118,13 +1132,15 @@ async function getPhotoFolder() {
     + githubUser
     + "/"
     + repository
-    + "/contents/photo";
+    + "/contents/"
+    + folderPath;
 
 
   try {
 
 
-    const response = await fetch(apiURL);
+    const response =
+      await fetch(apiURL);
 
 
     if (!response.ok) {
@@ -1137,7 +1153,8 @@ async function getPhotoFolder() {
     }
 
 
-    const files = await response.json();
+    const files =
+      await response.json();
 
 
     return files;
@@ -1147,7 +1164,7 @@ async function getPhotoFolder() {
 
 
     console.error(
-      "GitHubのphotoフォルダ取得に失敗しました。",
+      "GitHubフォルダの取得に失敗しました。",
       error
     );
 
@@ -1166,10 +1183,12 @@ async function getPhotoFolder() {
 ==================================================
 */
 
+
 async function getPhotoList() {
 
 
-  const files = await getPhotoFolder();
+  const files =
+    await getGitHubFolder(photoFolder);
 
 
   /*
@@ -1221,43 +1240,7 @@ async function getPhotoList() {
         );
 
 
-      if (!isImage) {
-
-        return false;
-
-      }
-
-
-      /*
-      ------------------------------------------
-      ★★★ logoをPHOTOSから除外
-      ------------------------------------------
-
-      logo.png
-      logo.jpg
-      logo.jpeg
-      logo.webp
-      logo.gif
-
-      などをPHOTOSに表示しません。
-      ------------------------------------------
-      */
-
-
-      if (
-        name === "logo.png" ||
-        name === "logo.jpg" ||
-        name === "logo.jpeg" ||
-        name === "logo.webp" ||
-        name === "logo.gif"
-      ) {
-
-        return false;
-
-      }
-
-
-      return true;
+      return isImage;
 
     })
 
@@ -1279,18 +1262,12 @@ async function getPhotoList() {
 
 /*
 ==================================================
-★★★ ロゴをGitHub APIから自動取得
+トップのlogo.pngを取得
 ==================================================
 
-以前は
+photo/logo.png
 
-/main/photo/logo.png
-
-と直接指定していましたが、
-
-今回はGitHub APIからlogo.pngを探します。
-
-そのため、mainブランチ以外でも動作します。
+をGitHub APIから探します。
 
 ==================================================
 */
@@ -1307,13 +1284,20 @@ async function loadLogo() {
     document.getElementById("logoPlaceholder");
 
 
+  /*
+  ----------------------------------------------
+  photoフォルダを取得
+  ----------------------------------------------
+  */
+
+
   const files =
-    await getPhotoFolder();
+    await getGitHubFolder("photo");
 
 
   /*
   ----------------------------------------------
-  logo.png を探す
+  logo.pngを探す
   ----------------------------------------------
   */
 
@@ -1336,12 +1320,15 @@ async function loadLogo() {
 
   /*
   ----------------------------------------------
-  logo.png が見つかった場合
+  logo.pngが見つかった場合
   ----------------------------------------------
   */
 
 
-  if (logoFile && logoFile.download_url) {
+  if (
+    logoFile &&
+    logoFile.download_url
+  ) {
 
 
     logo.onload = function() {
@@ -1363,7 +1350,6 @@ async function loadLogo() {
 
       /*
       logo.pngが読み込めなかった場合
-      文字ロゴを表示
       */
 
       logo.style.display =
@@ -1452,19 +1438,112 @@ function shuffle(array) {
 
 /*
 ==================================================
-ランダムで3枚選ぶ
+★★★ ランダムで3枚選ぶ
+
+今回ここを変更しています。
+
+・3枚すべて別画像
+・前回表示した3枚をできるだけ避ける
+・表示する画像自体を毎回ランダム変更
+
 ==================================================
 */
+
+
+let previousPhotos = [];
 
 
 function selectRandomPhotos(photoList) {
 
 
-  const shuffled =
-    shuffle(photoList);
+  /*
+  ----------------------------------------------
+  写真が3枚以下の場合
+  ----------------------------------------------
+
+  3枚しかない場合は全て表示します。
+  ----------------------------------------------
+  */
 
 
-  return shuffled.slice(0, 3);
+  if (photoList.length <= 3) {
+
+    return shuffle(photoList);
+
+  }
+
+
+  /*
+  ----------------------------------------------
+  前回表示した写真を除外
+  ----------------------------------------------
+  */
+
+
+  const newPhotos =
+    photoList.filter(
+      photo =>
+        !previousPhotos.includes(photo)
+    );
+
+
+  /*
+  ----------------------------------------------
+  前回の写真を除外すると
+  3枚未満になってしまう場合
+  ----------------------------------------------
+
+  残りの写真から補充します。
+  ----------------------------------------------
+  */
+
+
+  let candidates =
+    newPhotos;
+
+
+  if (candidates.length < 3) {
+
+
+    const additionalPhotos =
+      photoList.filter(
+        photo =>
+          !candidates.includes(photo)
+      );
+
+
+    candidates =
+      [
+        ...candidates,
+        ...shuffle(additionalPhotos)
+      ];
+
+  }
+
+
+  /*
+  ----------------------------------------------
+  ランダムに3枚選択
+  ----------------------------------------------
+  */
+
+
+  const selectedPhotos =
+    shuffle(candidates).slice(0, 3);
+
+
+  /*
+  ----------------------------------------------
+  今回表示した3枚を記録
+  ----------------------------------------------
+  */
+
+
+  previousPhotos =
+    [...selectedPhotos];
+
+
+  return selectedPhotos;
 
 }
 
@@ -1621,7 +1700,7 @@ async function initializePhotos() {
 
 
     console.error(
-      "photoフォルダに写真がありません。"
+      "photo/photosフォルダに写真がありません。"
     );
 
 
@@ -1666,7 +1745,16 @@ initializePhotos();
 
 /*
 ==================================================
-10秒ごとに写真を変更
+★★★ 10秒ごとに写真を変更
+==================================================
+
+ここを変更すれば表示間隔を変えられます。
+
+10000 = 10秒
+5000  = 5秒
+15000 = 15秒
+30000 = 30秒
+
 ==================================================
 */
 
@@ -1679,11 +1767,19 @@ setInterval(() => {
   ) {
 
 
+    /*
+    毎回新しくランダムな3枚を選択
+    */
+
     const selected =
       selectRandomPhotos(
         availablePhotos
       );
 
+
+    /*
+    3枚すべて入れ替える
+    */
 
     displayPhotos(
       selected
@@ -1699,5 +1795,6 @@ setInterval(() => {
 
 
 </body>
+
 </html>
 ```
