@@ -1,11 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="DOGGYMAN - Niigata, Japan">
+
 <meta property="og:title" content="DOGGYMAN">
+
 <meta property="og:description" content="DOGGYMAN / Niigata, Japan">
+
 <title>DOGGYMAN | Niigata, Japan</title>
 
 <style>
@@ -18,57 +26,40 @@
 
 
 :root {
-
   --bg:#0b0b0b;
   --fg:#f2f2f2;
   --muted:#999;
   --line:#292929;
-
 }
 
 
 * {
-
   box-sizing:border-box;
-
 }
 
 
 html {
-
   scroll-behavior:smooth;
-
 }
 
 
 body {
-
   margin:0;
-
   background:var(--bg);
-
   color:var(--fg);
-
   font-family:'Noto Sans JP',sans-serif;
-
 }
 
 
 a {
-
   color:inherit;
-
   text-decoration:none;
-
 }
 
 
 img {
-
   max-width:100%;
-
   display:block;
-
 }
 
 
@@ -77,58 +68,41 @@ img {
 ================================================== */
 
 header {
-
   position:fixed;
-
   top:0;
   left:0;
   right:0;
-
   z-index:10;
 
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
 
   padding:20px 5vw;
 
   background:linear-gradient(#0b0b0b,transparent);
-
 }
 
 
 .site-name {
-
   font-family:'Archivo Black',sans-serif;
-
   font-size:24px;
-
   letter-spacing:-1px;
-
 }
 
 
 nav {
-
   display:flex;
-
   gap:25px;
 
   font-size:12px;
-
   font-weight:900;
-
   letter-spacing:1px;
-
 }
 
 
 nav a:hover {
-
   opacity:.55;
-
 }
 
 
@@ -137,11 +111,9 @@ nav a:hover {
 ================================================== */
 
 .hero {
-
   min-height:100vh;
 
   display:grid;
-
   place-items:center;
 
   text-align:center;
@@ -149,14 +121,11 @@ nav a:hover {
   padding:100px 5vw 70px;
 
   border-bottom:1px solid var(--line);
-
 }
 
 
 .hero-inner {
-
   width:min(1100px,100%);
-
 }
 
 
@@ -165,20 +134,16 @@ nav a:hover {
 ================================================== */
 
 .logo {
-
   width:min(520px,80vw);
-
   max-height:60vh;
 
   margin:0 auto 30px;
 
   object-fit:contain;
-
 }
 
 
 .logo-placeholder {
-
   font-family:'Archivo Black',sans-serif;
 
   font-size:clamp(70px,14vw,180px);
@@ -186,12 +151,10 @@ nav a:hover {
   line-height:.8;
 
   letter-spacing:-8px;
-
 }
 
 
 .tagline {
-
   margin-top:35px;
 
   color:var(--muted);
@@ -199,7 +162,6 @@ nav a:hover {
   font-size:12px;
 
   letter-spacing:3px;
-
 }
 
 
@@ -208,7 +170,6 @@ nav a:hover {
 ================================================== */
 
 section {
-
   width:min(1100px,90vw);
 
   margin:auto;
@@ -216,12 +177,10 @@ section {
   padding:100px 0;
 
   border-bottom:1px solid var(--line);
-
 }
 
 
 .section-title {
-
   font-family:'Archivo Black',sans-serif;
 
   font-size:clamp(36px,6vw,70px);
@@ -231,7 +190,6 @@ section {
   margin:0 0 50px;
 
   letter-spacing:-2px;
-
 }
 
 
@@ -240,18 +198,15 @@ section {
 ================================================== */
 
 .youtube-grid {
-
   display:grid;
 
   grid-template-columns:repeat(3,1fr);
 
   gap:20px;
-
 }
 
 
 .video {
-
   aspect-ratio:16/9;
 
   width:100%;
@@ -259,7 +214,6 @@ section {
   border:0;
 
   background:#151515;
-
 }
 
 
@@ -268,61 +222,47 @@ section {
 ================================================== */
 
 .schedule {
-
   width:100%;
 
   border-collapse:collapse;
-
 }
 
 
 .schedule tr {
-
   border-top:1px solid var(--line);
-
 }
 
 
 .schedule tr:last-child {
-
   border-bottom:1px solid var(--line);
-
 }
 
 
 .schedule td {
-
   padding:22px 10px;
 
   vertical-align:top;
-
 }
 
 
 .date {
-
   width:150px;
 
   font-weight:900;
 
   font-size:18px;
-
 }
 
 
 .place {
-
   font-weight:700;
-
 }
 
 
 .detail {
-
   color:var(--muted);
 
   font-size:13px;
-
 }
 
 
@@ -331,31 +271,25 @@ section {
 ================================================== */
 
 .photos {
-
   display:grid;
 
   grid-template-columns:repeat(3,1fr);
 
   gap:12px;
-
 }
 
 
 .photo-item {
-
   overflow:hidden;
 
   background:#151515;
 
   aspect-ratio:1/1;
-
 }
 
 
 .photo-item img {
-
   width:100%;
-
   height:100%;
 
   object-fit:cover;
@@ -363,25 +297,18 @@ section {
   cursor:pointer;
 
   transition:
-
     opacity .6s ease,
-
     transform .6s ease;
-
 }
 
 
 .photo-item img:hover {
-
   transform:scale(1.04);
-
 }
 
 
 .photo-item.fade img {
-
   opacity:0;
-
 }
 
 
@@ -390,13 +317,11 @@ section {
 ================================================== */
 
 .photo-loading {
-
   aspect-ratio:1/1;
 
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   background:#151515;
@@ -406,7 +331,6 @@ section {
   font-size:11px;
 
   letter-spacing:1px;
-
 }
 
 
@@ -415,69 +339,55 @@ section {
 ================================================== */
 
 .links {
-
   display:flex;
 
   align-items:center;
 
   gap:20px;
-
 }
 
 
 .social-link {
-
   width:60px;
-
   height:60px;
 
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   border:1px solid #444;
 
   transition:
-
     background .2s ease,
-
     color .2s ease,
-
     border-color .2s ease;
-
 }
 
 
 .social-link:hover {
-
   background:#fff;
 
   color:#000;
 
   border-color:#fff;
-
 }
 
 
 .social-link svg {
-
   width:28px;
-
   height:28px;
 
   fill:currentColor;
-
 }
 
 
-/* Instagram */
+/* ==================================================
+   INSTAGRAM
+================================================== */
 
 .instagram-icon {
-
   width:27px;
-
   height:27px;
 
   border:2px solid currentColor;
@@ -485,18 +395,15 @@ section {
   border-radius:8px;
 
   position:relative;
-
 }
 
 
 .instagram-icon::before {
-
   content:"";
 
   position:absolute;
 
   width:10px;
-
   height:10px;
 
   border:2px solid currentColor;
@@ -504,22 +411,18 @@ section {
   border-radius:50%;
 
   left:50%;
-
   top:50%;
 
   transform:translate(-50%,-50%);
-
 }
 
 
 .instagram-icon::after {
-
   content:"";
 
   position:absolute;
 
   width:4px;
-
   height:4px;
 
   background:currentColor;
@@ -527,9 +430,7 @@ section {
   border-radius:50%;
 
   right:4px;
-
   top:4px;
-
 }
 
 
@@ -538,7 +439,6 @@ section {
 ================================================== */
 
 footer {
-
   padding:50px 5vw;
 
   display:flex;
@@ -548,7 +448,6 @@ footer {
   color:#666;
 
   font-size:11px;
-
 }
 
 
@@ -558,83 +457,63 @@ footer {
 
 @media(max-width:700px) {
 
-
   header {
-
     padding:16px 5vw;
-
   }
 
 
   nav {
-
     gap:12px;
-
   }
 
 
   nav a:nth-child(1) {
-
     display:none;
-
   }
 
 
   section {
-
     padding:70px 0;
-
   }
 
 
   .youtube-grid {
-
     grid-template-columns:1fr;
-
   }
 
 
   .photos {
-
     grid-template-columns:1fr;
-
   }
 
 
   .schedule td {
-
     padding:17px 5px;
-
   }
 
 
   .date {
-
     width:105px;
 
     font-size:15px;
-
   }
 
 
   .social-link {
-
     width:55px;
-
     height:55px;
-
   }
 
 
   footer {
-
     display:block;
 
     line-height:2;
-
   }
 
 }
+
+</style>
 
 </head>
 
@@ -642,125 +521,152 @@ footer {
 
 <!-- ==================================================
      HEADER
+================================================== -->
+
 <header>
-<a class="site-name" href="#">
+
+  <a class="site-name" href="#">
     DOGGYMAN
   </a>
 
-<nav>
-    <a href="#music">
-      MUSIC
-    </a>
+  <nav>
 
-    <a href="#schedule">
-      SCHEDULE
-    </a>
+```
+<a href="#music">
+  MUSIC
+</a>
 
-    <a href="#photos">
-      PHOTOS
-    </a>
+<a href="#schedule">
+  SCHEDULE
+</a>
 
-    <a href="#links">
-      LINKS
-    </a>
+<a href="#photos">
+  PHOTOS
+</a>
 
-</nav>
+<a href="#links">
+  LINKS
+</a>
+```
+
+  </nav>
+
 </header>
 
 <main>
 
 <!-- ==================================================
      HERO
+================================================== -->
+
 <section class="hero">
-<div class="hero-inner">
 
-    <!--
-    ==================================================
-    TOP LOGO
+  <div class="hero-inner">
 
-    photo/logo.png を直接読み込みます。
+```
+<!--
+==================================================
+TOP LOGO
 
-    PHOTOSのランダム表示には含まれません。
-    ==================================================
-    -->
+GitHubリポジトリ内の
 
-    <img
-      id="bandLogo"
-      class="logo"
-      src="photo/logo.png"
-      alt="DOGGYMAN"
-      style="display:none;"
-    >
+photo/logo.png
+
+を直接読み込みます。
+
+logo.pngはPHOTOSには表示されません。
+==================================================
+-->
 
 
-    <!--
-    logo.pngが読み込めない場合の予備表示
-    -->
-
-    <div
-      id="logoPlaceholder"
-      class="logo-placeholder">
-
-      DOGGY<br>
-      MAN
-
-    </div>
+<img
+  id="bandLogo"
+  class="logo"
+  src="./photo/logo.png"
+  alt="DOGGYMAN"
+  style="display:none;"
+>
 
 
-    <div class="tagline">
-      NIIGATA, JAPAN
-    </div>
+<!--
+logo.pngが読み込めない場合の予備表示
+-->
+
+
+<div
+  id="logoPlaceholder"
+  class="logo-placeholder">
+
+  DOGGY<br>
+  MAN
 
 </div>
+
+
+<div class="tagline">
+  NIIGATA, JAPAN
+</div>
+```
+
+  </div>
+
 </section>
 
 <!-- ==================================================
      MUSIC
+================================================== -->
+
 <section id="music">
-<h2 class="section-title">
+
+  <h2 class="section-title">
     MUSIC
   </h2>
 
-<div class="youtube-grid">
+  <div class="youtube-grid">
 
-    <iframe
-      class="video"
-      src="https://www.youtube.com/embed/tKLcg2nkenU"
-      title="DOGGYMAN"
-      allowfullscreen>
-    </iframe>
-
-
-    <iframe
-      class="video"
-      src="https://www.youtube.com/embed/LhAorE2pFk4"
-      title="DOGGYMAN"
-      allowfullscreen>
-    </iframe>
+```
+<iframe
+  class="video"
+  src="https://www.youtube.com/embed/tKLcg2nkenU"
+  title="DOGGYMAN"
+  allowfullscreen>
+</iframe>
 
 
-    <iframe
-      class="video"
-      src="https://www.youtube.com/embed/s3MFZqEsXSg"
-      title="DOGGYMAN"
-      allowfullscreen>
-    </iframe>
+<iframe
+  class="video"
+  src="https://www.youtube.com/embed/LhAorE2pFk4"
+  title="DOGGYMAN"
+  allowfullscreen>
+</iframe>
 
 
+<iframe
+  class="video"
+  src="https://www.youtube.com/embed/s3MFZqEsXSg"
+  title="DOGGYMAN"
+  allowfullscreen>
+</iframe>
+```
 
-</div>
+  </div>
+
 </section>
 
 <!-- ==================================================
      SCHEDULE
+================================================== -->
+
 <section id="schedule">
-<h2 class="section-title">
+
+  <h2 class="section-title">
     SCHEDULE
   </h2>
 
-<!--
+  <!--
   ==================================================
-  ライブ予定を追加するときはここを編集
+  ライブ予定を追加・変更するときは、
+  下の<tr>から</tr>までを編集してください。
 
   例：
 
@@ -787,202 +693,233 @@ footer {
     </td>
 
   </tr>
-
   ==================================================
+  -->
 
-<table class="schedule">
+  <table class="schedule">
 
-    <tr>
+```
+<tr>
 
-      <td class="date">
-        2026.00.00
-      </td>
-
-      <td>
-
-        <div class="place">
-          LIVE TITLE
-        </div>
-
-        <div class="detail">
-          VENUE / Niigata
-        </div>
-
-        <div class="detail">
-          OPEN 00:00 / START 00:00
-        </div>
-
-      </td>
-
-    </tr>
+  <td class="date">
+    2026.00.00
+  </td>
 
 
-    <tr>
+  <td>
 
-      <td class="date">
-        2026.00.00
-      </td>
+    <div class="place">
+      LIVE TITLE
+    </div>
 
-      <td>
 
-        <div class="place">
-          LIVE TITLE
-        </div>
+    <div class="detail">
+      VENUE / Niigata
+    </div>
 
-        <div class="detail">
-          VENUE / Tokyo
-        </div>
 
-        <div class="detail">
-          OPEN 00:00 / START 00:00
-        </div>
+    <div class="detail">
+      OPEN 00:00 / START 00:00
+    </div>
 
-      </td>
+  </td>
 
-    </tr>
+</tr>
 
 
 
-</table>
+<tr>
+
+  <td class="date">
+    2026.00.00
+  </td>
+
+
+  <td>
+
+    <div class="place">
+      LIVE TITLE
+    </div>
+
+
+    <div class="detail">
+      VENUE / Tokyo
+    </div>
+
+
+    <div class="detail">
+      OPEN 00:00 / START 00:00
+    </div>
+
+  </td>
+
+</tr>
+```
+
+  </table>
+
 </section>
 
 <!-- ==================================================
      PHOTOS
+================================================== -->
+
 <section id="photos">
-<h2 class="section-title">
+
+  <h2 class="section-title">
     PHOTOS
   </h2>
 
-<div class="photos">
+  <div class="photos">
 
-    <div class="photo-item">
+```
+<div class="photo-item">
 
-      <div
-        id="photoLoading1"
-        class="photo-loading">
+  <div
+    id="photoLoading1"
+    class="photo-loading">
 
-        LOADING...
+    LOADING...
 
-      </div>
-
-      <img
-        id="photo1"
-        src=""
-        alt="DOGGYMAN photo"
-        style="display:none;">
-
-    </div>
+  </div>
 
 
-    <div class="photo-item">
-
-      <div
-        id="photoLoading2"
-        class="photo-loading">
-
-        LOADING...
-
-      </div>
-
-      <img
-        id="photo2"
-        src=""
-        alt="DOGGYMAN photo"
-        style="display:none;">
-
-    </div>
-
-
-    <div class="photo-item">
-
-      <div
-        id="photoLoading3"
-        class="photo-loading">
-
-        LOADING...
-
-      </div>
-
-      <img
-        id="photo3"
-        src=""
-        alt="DOGGYMAN photo"
-        style="display:none;">
-
-    </div>
-
-
+  <img
+    id="photo1"
+    src=""
+    alt="DOGGYMAN photo"
+    style="display:none;"
+  >
 
 </div>
+
+
+
+<div class="photo-item">
+
+  <div
+    id="photoLoading2"
+    class="photo-loading">
+
+    LOADING...
+
+  </div>
+
+
+  <img
+    id="photo2"
+    src=""
+    alt="DOGGYMAN photo"
+    style="display:none;"
+  >
+
+</div>
+
+
+
+<div class="photo-item">
+
+  <div
+    id="photoLoading3"
+    class="photo-loading">
+
+    LOADING...
+
+  </div>
+
+
+  <img
+    id="photo3"
+    src=""
+    alt="DOGGYMAN photo"
+    style="display:none;"
+  >
+
+</div>
+```
+
+  </div>
+
 </section>
 
 <!-- ==================================================
      LINKS
+================================================== -->
+
 <section id="links">
-<h2 class="section-title">
+
+  <h2 class="section-title">
     LINKS
   </h2>
 
-<div class="links">
+  <div class="links">
 
-    <!-- X -->
+```
+<!-- X -->
 
-    <a
-      class="social-link"
-      href="https://x.com/doggy_niigata"
-      target="_blank"
-      rel="noopener"
-      aria-label="DOGGYMAN X">
-
-
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true">
-
-        <path d="M18.244 2.25h3.308l-7.227 8.26L22.827 21.75h-6.57l-5.144-6.725-5.889 6.725H1.916l7.73-8.835L1.474 2.25H8.21l4.65 6.147 5.384-6.147zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
-
-      </svg>
-
-    </a>
+<a
+  class="social-link"
+  href="https://x.com/doggy_niigata"
+  target="_blank"
+  rel="noopener"
+  aria-label="DOGGYMAN X">
 
 
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true">
 
-    <!-- Instagram -->
+    <path d="M18.244 2.25h3.308l-7.227 8.26L22.827 21.75h-6.57l-5.144-6.725-5.889 6.725H1.916l7.73-8.835L1.474 2.25H8.21l4.65 6.147 5.384-6.147zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
 
-    <a
-      class="social-link"
-      href="https://www.instagram.com/doggyman_niigata_jp/?hl=ja"
-      target="_blank"
-      rel="noopener"
-      aria-label="DOGGYMAN Instagram">
+  </svg>
 
 
-      <span class="instagram-icon"></span>
-
-
-    </a>
+</a>
 
 
 
-</div>
+<!-- Instagram -->
+
+<a
+  class="social-link"
+  href="https://www.instagram.com/doggyman_niigata_jp/?hl=ja"
+  target="_blank"
+  rel="noopener"
+  aria-label="DOGGYMAN Instagram">
+
+
+  <span class="instagram-icon"></span>
+
+
+</a>
+```
+
+  </div>
+
 </section>
 
 </main>
 
 <!-- ==================================================
      FOOTER
+================================================== -->
+
 <footer>
-<div>
+
+  <div>
     © DOGGYMAN
   </div>
 
-<div>
+  <div>
     NIIGATA, JAPAN
   </div>
+
 </footer>
 
 <!-- ==================================================
      JAVASCRIPT
+================================================== -->
+
 <script>
 
 
@@ -990,11 +927,21 @@ footer {
 ==================================================
 GITHUB SETTINGS
 ==================================================
+
+GitHubユーザー名：
+takano129hajime
+
+リポジトリ名：
+doggyman.github.io
+
+==================================================
 */
+
 
 const githubUser = "takano129hajime";
 
 const repository = "doggyman.github.io";
+
 
 
 /*
@@ -1002,10 +949,16 @@ const repository = "doggyman.github.io";
 PHOTO FOLDER
 ==================================================
 
-リポジトリ内：
+GitHubリポジトリ内：
 
-photo/
+doggyman.github.io/
+│
+├── index.html
+│
+└── photo/
+    │
     ├── logo.png
+    │
     └── photos/
         ├── 001.jpg
         ├── 002.jpg
@@ -1021,9 +974,10 @@ PHOTOSは photo/photos/ から取得します。
 const photoFolder = "photo/photos";
 
 
+
 /*
 ==================================================
-GitHub APIからフォルダを取得
+GitHub APIからフォルダ一覧を取得
 ==================================================
 */
 
@@ -1047,15 +1001,25 @@ async function getGitHubFolder(folderPath) {
 
 
     const response =
-      await fetch(apiURL);
+      await fetch(
+        apiURL,
+        {
+          headers: {
+            Accept:
+              "application/vnd.github+json"
+          }
+        }
+      );
 
 
     if (!response.ok) {
+
 
       throw new Error(
         "GitHub API error: "
         + response.status
       );
+
 
     }
 
@@ -1064,18 +1028,17 @@ async function getGitHubFolder(folderPath) {
       await response.json();
 
 
-    /*
-    GitHub APIがフォルダ一覧を返しているか確認
-    */
-
     if (!Array.isArray(files)) {
+
 
       console.error(
         "GitHub APIの返却データがフォルダ一覧ではありません。",
         files
       );
 
+
       return [];
+
 
     }
 
@@ -1094,6 +1057,7 @@ async function getGitHubFolder(folderPath) {
 
     return [];
 
+
   }
 
 }
@@ -1111,12 +1075,14 @@ async function getPhotoList() {
 
 
   const files =
-    await getGitHubFolder(photoFolder);
+    await getGitHubFolder(
+      photoFolder
+    );
 
 
   /*
   ----------------------------------------------
-  画像ファイルだけを抽出
+  対応する画像拡張子
   ----------------------------------------------
   */
 
@@ -1132,14 +1098,17 @@ async function getPhotoList() {
   ];
 
 
+  /*
+  ----------------------------------------------
+  画像ファイルだけを抽出
+  ----------------------------------------------
+  */
+
+
   const photos = files
 
     .filter(file => {
 
-
-      /*
-      ファイルであることを確認
-      */
 
       if (file.type !== "file") {
 
@@ -1148,33 +1117,33 @@ async function getPhotoList() {
       }
 
 
-      /*
-      拡張子を確認
-      */
-
       const name =
         file.name.toLowerCase();
 
 
-      const isImage =
-        imageExtensions.some(
-          extension =>
-            name.endsWith(extension)
-        );
+      return imageExtensions.some(
+        extension =>
+          name.endsWith(extension)
+      );
 
-
-      return isImage;
 
     })
 
 
-    /*
-    ----------------------------------------------
-    GitHubから直接表示できるURLを使用
-    ----------------------------------------------
-    */
+    .map(file => {
 
-    .map(file => file.download_url)
+
+      /*
+      GitHub APIの
+      download_urlを使用
+      */
+
+
+      return file.download_url;
+
+
+    })
+
 
     .filter(url => url);
 
@@ -1187,16 +1156,14 @@ async function getPhotoList() {
 
 /*
 ==================================================
-トップのlogo.pngを読み込む
+トップロゴを読み込む
 ==================================================
 
-今回はGitHub APIを使わず、
+logoはGitHub APIを使わず、
 
-photo/logo.png
+./photo/logo.png
 
 を直接読み込みます。
-
-これによりlogoの読み込みがシンプルで安定します。
 
 ==================================================
 */
@@ -1206,16 +1173,30 @@ function loadLogo() {
 
 
   const logo =
-    document.getElementById("bandLogo");
+    document.getElementById(
+      "bandLogo"
+    );
 
 
   const placeholder =
-    document.getElementById("logoPlaceholder");
+    document.getElementById(
+      "logoPlaceholder"
+    );
+
+
+  if (
+    !logo ||
+    !placeholder
+  ) {
+
+    return;
+
+  }
 
 
   /*
   ----------------------------------------------
-  logo読み込み成功
+  ロゴ読み込み成功
   ----------------------------------------------
   */
 
@@ -1236,7 +1217,7 @@ function loadLogo() {
 
   /*
   ----------------------------------------------
-  logo読み込み失敗
+  ロゴ読み込み失敗
   ----------------------------------------------
   */
 
@@ -1245,7 +1226,7 @@ function loadLogo() {
 
 
     console.error(
-      "photo/logo.png が見つかりません。"
+      "ロゴを読み込めませんでした：./photo/logo.png"
     );
 
 
@@ -1259,6 +1240,16 @@ function loadLogo() {
 
   };
 
+
+  /*
+  ----------------------------------------------
+  srcを設定
+  ----------------------------------------------
+  */
+
+
+  logo.src =
+    "./photo/logo.png";
 
 }
 
@@ -1287,7 +1278,8 @@ function shuffle(array) {
 
     const j =
       Math.floor(
-        Math.random() * (i + 1)
+        Math.random()
+        * (i + 1)
       );
 
 
@@ -1298,6 +1290,7 @@ function shuffle(array) {
       shuffled[j],
       shuffled[i]
     ];
+
 
   }
 
@@ -1310,13 +1303,7 @@ function shuffle(array) {
 
 /*
 ==================================================
-ランダムで3枚選ぶ
-==================================================
-
-・3枚すべて別画像
-・前回表示した3枚をできるだけ避ける
-・毎回ランダムに変更
-
+前回と違う写真を優先して3枚選択
 ==================================================
 */
 
@@ -1324,7 +1311,9 @@ function shuffle(array) {
 let previousPhotos = [];
 
 
-function selectRandomPhotos(photoList) {
+function selectRandomPhotos(
+  photoList
+) {
 
 
   /*
@@ -1334,9 +1323,20 @@ function selectRandomPhotos(photoList) {
   */
 
 
-  if (photoList.length <= 3) {
+  if (
+    photoList.length <= 3
+  ) {
 
-    return shuffle(photoList);
+
+    const selected =
+      shuffle(photoList);
+
+
+    previousPhotos =
+      [...selected];
+
+
+    return selected;
 
   }
 
@@ -1351,39 +1351,44 @@ function selectRandomPhotos(photoList) {
   const newPhotos =
     photoList.filter(
       photo =>
-        !previousPhotos.includes(photo)
+        !previousPhotos.includes(
+          photo
+        )
     );
+
+
+  let candidates =
+    [...newPhotos];
 
 
   /*
   ----------------------------------------------
-  前回の写真を除外すると
-  3枚未満になってしまう場合
-
-  残りの写真から補充
+  3枚に足りない場合は補充
   ----------------------------------------------
   */
 
 
-  let candidates =
-    newPhotos;
-
-
-  if (candidates.length < 3) {
+  if (
+    candidates.length < 3
+  ) {
 
 
     const additionalPhotos =
       photoList.filter(
         photo =>
-          !candidates.includes(photo)
+          !candidates.includes(
+            photo
+          )
       );
 
 
-    candidates =
-      [
-        ...candidates,
-        ...shuffle(additionalPhotos)
-      ];
+    candidates = [
+      ...candidates,
+      ...shuffle(
+        additionalPhotos
+      )
+    ];
+
 
   }
 
@@ -1396,12 +1401,14 @@ function selectRandomPhotos(photoList) {
 
 
   const selectedPhotos =
-    shuffle(candidates).slice(0, 3);
+    shuffle(
+      candidates
+    ).slice(0, 3);
 
 
   /*
   ----------------------------------------------
-  今回表示した3枚を記録
+  今回の写真を記録
   ----------------------------------------------
   */
 
@@ -1423,40 +1430,50 @@ function selectRandomPhotos(photoList) {
 */
 
 
-function displayPhotos(selectedPhotos) {
+function displayPhotos(
+  selectedPhotos
+) {
 
 
   const photoElements = [
 
-    document.getElementById("photo1"),
+    document.getElementById(
+      "photo1"
+    ),
 
-    document.getElementById("photo2"),
+    document.getElementById(
+      "photo2"
+    ),
 
-    document.getElementById("photo3")
+    document.getElementById(
+      "photo3"
+    )
 
   ];
 
 
   const loadingElements = [
 
-    document.getElementById("photoLoading1"),
+    document.getElementById(
+      "photoLoading1"
+    ),
 
-    document.getElementById("photoLoading2"),
+    document.getElementById(
+      "photoLoading2"
+    ),
 
-    document.getElementById("photoLoading3")
-
-  ];
-
-
-  const containers = [
-
-    photoElements[0].parentElement,
-
-    photoElements[1].parentElement,
-
-    photoElements[2].parentElement
+    document.getElementById(
+      "photoLoading3"
+    )
 
   ];
+
+
+  const containers =
+    photoElements.map(
+      photo =>
+        photo.parentElement
+    );
 
 
   /*
@@ -1466,66 +1483,148 @@ function displayPhotos(selectedPhotos) {
   */
 
 
-  containers.forEach(container => {
+  containers.forEach(
+    container => {
 
-    container.classList.add("fade");
+      container.classList.add(
+        "fade"
+      );
 
-  });
+    }
+  );
 
 
   /*
   ----------------------------------------------
-  写真を変更
+  600ms後に画像を変更
   ----------------------------------------------
   */
 
 
-  setTimeout(() => {
+  setTimeout(
+    () => {
 
 
-    photoElements.forEach((img, index) => {
+      photoElements.forEach(
+        (img, index) => {
 
 
-      if (selectedPhotos[index]) {
+          const selectedPhoto =
+            selectedPhotos[index];
 
 
-        img.src =
-          selectedPhotos[index];
+          if (
+            selectedPhoto
+          ) {
 
 
-        img.style.display =
-          "block";
+            img.src =
+              selectedPhoto;
 
 
-        loadingElements[index].style.display =
-          "none";
-
-      }
-
-    });
+            img.style.display =
+              "block";
 
 
-    /*
-    --------------------------------------------
-    フェードイン
-    --------------------------------------------
-    */
+            loadingElements[index]
+              .style.display =
+              "none";
 
 
-    setTimeout(() => {
+          } else {
 
 
-      containers.forEach(container => {
-
-        container.classList.remove("fade");
-
-      });
+            img.removeAttribute(
+              "src"
+            );
 
 
-    }, 50);
+            img.style.display =
+              "none";
 
 
-  }, 600);
+            loadingElements[index]
+              .style.display =
+              "flex";
+
+
+          }
+
+
+        }
+      );
+
+
+      /*
+      --------------------------------------------
+      フェードイン
+      --------------------------------------------
+      */
+
+
+      setTimeout(
+        () => {
+
+
+          containers.forEach(
+            container => {
+
+              container.classList.remove(
+                "fade"
+              );
+
+            }
+          );
+
+
+        },
+        50
+      );
+
+
+    },
+    600
+  );
+
+}
+
+
+
+/*
+==================================================
+写真読み込みエラー表示
+==================================================
+*/
+
+
+function showPhotoError() {
+
+
+  const loadingElements = [
+
+    document.getElementById(
+      "photoLoading1"
+    ),
+
+    document.getElementById(
+      "photoLoading2"
+    ),
+
+    document.getElementById(
+      "photoLoading3"
+    )
+
+  ];
+
+
+  loadingElements.forEach(
+    element => {
+
+      element.textContent =
+        "PHOTO NOT FOUND";
+
+    }
+  );
 
 }
 
@@ -1539,7 +1638,6 @@ function displayPhotos(selectedPhotos) {
 
 
 let availablePhotos = [];
-
 
 
 async function initializePhotos() {
@@ -1558,12 +1656,14 @@ async function initializePhotos() {
 
   /*
   ----------------------------------------------
-  写真がない場合
+  写真が見つからない場合
   ----------------------------------------------
   */
 
 
-  if (availablePhotos.length === 0) {
+  if (
+    availablePhotos.length === 0
+  ) {
 
 
     console.error(
@@ -1571,28 +1671,7 @@ async function initializePhotos() {
     );
 
 
-    /*
-    LOADING表示を消してエラー表示
-    */
-
-
-    const loadingElements = [
-
-      document.getElementById("photoLoading1"),
-
-      document.getElementById("photoLoading2"),
-
-      document.getElementById("photoLoading3")
-
-    ];
-
-
-    loadingElements.forEach(element => {
-
-      element.textContent =
-        "PHOTO NOT FOUND";
-
-    });
+    showPhotoError();
 
 
     return;
@@ -1623,7 +1702,7 @@ async function initializePhotos() {
 
 /*
 ==================================================
-開始
+ページ読み込み開始
 ==================================================
 */
 
@@ -1648,38 +1727,36 @@ initializePhotos();
 */
 
 
-setInterval(() => {
+setInterval(
+  () => {
 
 
-  if (
-    availablePhotos.length > 0
-  ) {
+    if (
+      availablePhotos.length > 0
+    ) {
 
 
-    /*
-    毎回新しくランダムな3枚を選択
-    */
+      const selected =
+        selectRandomPhotos(
+          availablePhotos
+        );
 
-    const selected =
-      selectRandomPhotos(
-        availablePhotos
+
+      displayPhotos(
+        selected
       );
 
 
-    /*
-    3枚すべて入れ替える
-    */
-
-    displayPhotos(
-      selected
-    );
-
-  }
+    }
 
 
-}, 10000);
+  },
+  10000
+);
 
 
+</script>
 
 </body>
+
 </html>
